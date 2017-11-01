@@ -30,9 +30,13 @@ Edit mode
 ---------
 
 tab - show suggestion for used word (Insert Mode)
+
 jj - exit edit mode
+
 kk - exit and save
+
 kj - exit save and close
+
 kd - close without changes
 
 
