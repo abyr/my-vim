@@ -1,3 +1,0 @@
-= Install bundles =
-
-run srcript
