@@ -1,0 +1,53 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+
+  "parser": "babel-eslint",
+
+  "env": {
+    "browser": true
+  },
+
+  "globals": {
+    "React": true,
+    "_": true,
+    "Promise": true,
+    "moment": true
+  },
+
+  "plugins": [
+    "react"
+  ],
+
+  "extends": [
+    "airbnb"
+  ],
+
+  "rules": {
+    "no-console": ["error", {
+      "allow": ["log", "error"]
+    }],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "jsx-a11y/no-static-element-interactions": 0,
+    "jsx-quotes": ["error", "prefer-single"],
+    "arrow-parens": ["error", "as-needed"],
+    "import/no-named-as-default": 0,
+    "no-else-return": 0,
+    "array-callback-return": 0,
+    "no-underscore-dangle": ["error", {
+      "allow": []
+    }],
+    "import/no-mutable-exports": 0,
+    "no-shadow": 0,
+    "no-bitwise": ["error", { "int32Hint": true }],
+    "no-restricted-syntax": ["error", "LabeledStatement", "WithStatement"],
+    "react/prop-types": 0,
+    "react/jsx-no-bind": 0
+  }
+}
