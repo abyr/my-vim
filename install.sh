@@ -2,11 +2,11 @@
 # mv ~/.vimrc ~/.vimrc_old
 # cp .vimrc ~/.vimrc
 
-mkdir bundle
-
 git clone git://github.com/tpope/vim-pathogen.git pathogen
 mv pathogen/autoload autoload
 rm -rf pathogen
+
+mkdir bundle
 
 git clone git://github.com/elzr/vim-json.git bundle/vim-json
 git clone git://github.com/scrooloose/nerdtree.git bundle/nerdtree
