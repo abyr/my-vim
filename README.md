@@ -1,43 +1,43 @@
 Hotkeys
 =======
 
-^+l - NerdTree
+<kbd>Ctrl</kbd> + <kbd>l</kbd> - NerdTree
 
-^+i - toggle Syntastic
+<kbd>Ctrl</kbd> + <kbd>i</kbd> - toggle Syntastic
 
-^+p - CtrlP dialog
+<kbd>Ctrl</kbd> + <kbd>p</kbd> - CtrlP dialog
 
-^X+O - omni completion
+<kbd>Ctrl</kbd> + <kbd>X</kbd> <kbd>O</kbd> - omni completion
 
-^e - delete row ^d - duplicate row
+<kbd>Ctrl</kbd> + <kbd>e</kbd> - delete row ^d - duplicate row
 
-F2 - save file
+<kbd>F2</kbd> - save file
 
-F3 - toggle files tree browser (nerd tree)
+<kbd>F3</kbd> - toggle files tree browser (nerd tree)
 
-F5 - show buffers list
+<kbd>F5</kbd> - show buffers list
 
-F6 - show previous buffer
+<kbd>F6</kbd> - show previous buffer
 
-F7 - show next buffer
+<kbd>F7</kbd> - show next buffer
 
-F9 - show exit options
+<kbd>F9</kbd> - show exit options
 
-\ww - vimwiki
+<kbd>\\</kbd> <kbd>w</kbd> <kbd>w</kbd> - vimwiki
 
 
 Edit mode
 ---------
 
-tab - show suggestion for used word (Insert Mode)
+<kbd>tab</kbd> - show suggestion for used word (Insert Mode)
 
-jj - exit edit mode
+<kbd>j</kbd> <kbd>j</kbd> - exit edit mode
 
-kk - exit and save
+<kbd>k</kbd> <kbd>k</kbd> - exit and save
 
-kj - exit save and close
+<kbd>k</kbd> <kbd>j</kbd> - exit save and close
 
-kd - close without changes
+<kbd>k</kbd> <kbd>d</kbd> - close without changes
 
 
 Bundles
