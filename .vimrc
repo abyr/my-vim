@@ -2,8 +2,6 @@
 execute pathogen#infect()
 
 colorscheme pablo
-" colorscheme slate
-" colorscheme sweylagreen
 
 filetype off
 filetype plugin indent on

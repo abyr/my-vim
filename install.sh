@@ -2,6 +2,9 @@
 # mv ~/.vimrc ~/.vimrc_old
 # cp .vimrc ~/.vimrc
 
+# rm -rf autoload
+# rm -rf bundle
+
 git clone git://github.com/tpope/vim-pathogen.git pathogen
 mv pathogen/autoload autoload
 rm -rf pathogen
