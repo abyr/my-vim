@@ -2,17 +2,29 @@ Hotkeys
 =======
 
 ^+l - NerdTree
+
 ^+i - toggle Syntastic
+
 ^+p - CtrlP dialog
+
 ^X+O - omni completion
+
 ^e - delete row ^d - duplicate row
+
 F2 - save file
+
 F3 - toggle files tree browser (nerd tree)
+
 F5 - show buffers list
+
 F6 - show previous buffer
+
 F7 - show next buffer
+
 F9 - show exit options
+
 \ww - vimwiki
+
 
 Edit mode
 ---------
