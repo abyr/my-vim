@@ -43,24 +43,24 @@ Edit mode
 Bundles
 =======
 
-om/elzr/vim-json
+https://github.com/gelzr/vim-json
 
-om/scrooloose/nerdtree
+https://github.com/gscrooloose/nerdtree
 
-om/corntrace/bufexplorer
+https://github.com/gcorntrace/bufexplorer
 
-om/scrooloose/syntastic
+https://github.com/gscrooloose/syntastic
 
-om/vim-scripts/vimwiki
+https://github.com/gvim-scripts/vimwiki
 
-om/airblade/vim-gitgutter
+https://github.com/gairblade/vim-gitgutter
 
-om/tpope/vim-fugitive
+https://github.com/gtpope/vim-fugitive
 
-om/mattn/emmet-vim
+https://github.com/gmattn/emmet-vim
 
-om/vim-scripts/ScrollColors
+https://github.com/gvim-scripts/ScrollColors
 
-om/kien/ctrlp.vim
+https://github.com/gkien/ctrlp.vim
 
-om/ervandew/supertab
+https://github.com/gervandew/supertab
