@@ -12,6 +12,7 @@ set nu
 set syntax=on
 set nocompatible
 set ofu=syntaxcomplete#Complete
+" set backspace=indent,eol,start
 set shortmess=a
 set softtabstop=2
 set tabstop=2
