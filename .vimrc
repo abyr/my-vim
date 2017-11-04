@@ -66,10 +66,6 @@ nmap <C-i> :SyntasticToggleMode<cr>
 " F3 - File browser
 nmap <F3> :NERDTreeToggle<cr>
 imap <F3> <esc>:NERDTreeToggle<cr>
-" F4 - Taglist
-map <F4> :TlistToggle<cr>
-vmap <F4> <esc>:TlistToggle<cr>
-imap <F4> <esc>:TlistToggle<cr>
 " buffers
 " F5 - show buffers
 nmap <F5> <Esc>:BufExplorer<cr>

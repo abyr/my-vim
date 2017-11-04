@@ -7,12 +7,6 @@ Hotkeys
 
 <kbd>Ctrl</kbd> + <kbd>p</kbd> - CtrlP dialog
 
-<kbd>Ctrl</kbd> + <kbd>X</kbd> <kbd>O</kbd> - omni completion
-
-<kbd>Ctrl</kbd> + <kbd>e</kbd> - delete row ^d - duplicate row
-
-<kbd>F2</kbd> - save file
-
 <kbd>F3</kbd> - toggle files tree browser (nerd tree)
 
 <kbd>F5</kbd> - show buffers list
