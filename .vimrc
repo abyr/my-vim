@@ -1,7 +1,7 @@
 " denisenko
 execute pathogen#infect()
 
-colorscheme pablo
+colorscheme slate
 
 filetype off
 filetype plugin indent on
