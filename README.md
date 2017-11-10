@@ -3,7 +3,7 @@ Hotkeys
 
 <kbd>Ctrl</kbd> + <kbd>l</kbd> - NerdTree
 
-<kbd>Ctrl</kbd> + <kbd>i</kbd> - toggle Syntastic
+<kbd>Ctrl</kbd> + <kbd>i</kbd> - toggle A.L.E
 
 <kbd>Ctrl</kbd> + <kbd>p</kbd> - CtrlP dialog
 
@@ -33,28 +33,3 @@ Edit mode
 
 <kbd>k</kbd> <kbd>d</kbd> - close without changes
 
-
-Bundles
-=======
-
-https://github.com/gelzr/vim-json
-
-https://github.com/gscrooloose/nerdtree
-
-https://github.com/gcorntrace/bufexplorer
-
-https://github.com/gscrooloose/syntastic
-
-https://github.com/gvim-scripts/vimwiki
-
-https://github.com/gairblade/vim-gitgutter
-
-https://github.com/gtpope/vim-fugitive
-
-https://github.com/gmattn/emmet-vim
-
-https://github.com/gvim-scripts/ScrollColors
-
-https://github.com/gkien/ctrlp.vim
-
-https://github.com/gervandew/supertab

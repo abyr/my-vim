@@ -1,3 +1,8 @@
+" .vimrc
+
+
+" plugins
+
 call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'corntrace/bufexplorer'
@@ -6,11 +11,14 @@ Plug 'ervandew/supertab'
 Plug 'kien/ctrlp.vim'
 Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-scripts/ScrollColors'
 Plug 'vim-scripts/vimwiki'
 call plug#end()
+
+
+" settings
 
 colorscheme slate
 
@@ -24,7 +32,7 @@ set nu
 set syntax=on
 set nocompatible
 set ofu=syntaxcomplete#Complete
-" set backspace=indent,eol,start
+set backspace=indent,eol,start
 set shortmess=a
 set softtabstop=2
 set tabstop=2
@@ -43,8 +51,6 @@ set incsearch
 set nohlsearch
 set ignorecase
 set lz
-" set listchars=tab:··
-" set list
 set ffs=unix,dos,mac
 set fencs=utf-8,cp1251,koi8-r,ucs-2,cp866
 set showcmd
@@ -59,11 +65,14 @@ set noswapfile
 autocmd BufWritePre * :%s/\s\+$//e
 set encoding=utf8
 au BufReadPost *.mustache set syntax=html
-"status line format
-set statusline=%<%f%h%m%r\ %b\ %{&encoding}\ 0x\ \ %l,%c%V\ %P
-set laststatus=2
 " Fix <Enter> for comment
 set fo+=cr
+
+" status line format
+set statusline=%<%f%h%m%r\ %b\ %{&encoding}\ 0x\ \ %l,%c%V\ %P
+set laststatus=2
+set statusline+=%#warningmsg#
+set statusline+=%*
 
 
 " hotkeys
@@ -74,7 +83,8 @@ imap kj <Esc> :wq<cr>
 nmap kd <Esc> :q!<cr>
 
 nmap <C-l> :NERDTreeFind<cr>
-nmap <C-i> :SyntasticToggleMode<cr>
+nmap <C-i> :ALEToggle<cr>
+" nmap <C-i> :SyntasticToggleMode<cr>
 " F3 - File browser
 nmap <F3> :NERDTreeToggle<cr>
 imap <F3> <esc>:NERDTreeToggle<cr>
@@ -113,17 +123,9 @@ nmap <silent> <C-S-Left> <C-W>><C-W>>
 nmap <silent> <C-S-Right> <C-W><<C-W><
 
 
-" settings
+" plugins settings
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
-let g:syntastic_enable_signs=1
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_javascript_checkers = ['eslint']
+let g:ale_linters = {'javascript': ['eslint']}
 
 if exists("g:ctrl_user_command")
 	unlet g:ctrlp_user_command
@@ -143,6 +145,5 @@ set complete+=b
 set completeopt-=preview
 set completeopt+=longest
 set suffixesadd+=.js
-" set path+=~/Projects/name/static/js
-"
+
 let g:notes_directories = ['~/Dropbox/Shared Notes']
