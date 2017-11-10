@@ -1,5 +1,16 @@
-" denisenko
-execute pathogen#infect()
+call plug#begin('~/.vim/plugged')
+Plug 'airblade/vim-gitgutter'
+Plug 'corntrace/bufexplorer'
+Plug 'elzr/vim-json'
+Plug 'ervandew/supertab'
+Plug 'kien/ctrlp.vim'
+Plug 'mattn/emmet-vim'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-scripts/ScrollColors'
+Plug 'vim-scripts/vimwiki'
+call plug#end()
 
 colorscheme slate
 
@@ -7,6 +18,7 @@ filetype off
 filetype plugin indent on
 filetype plugin on
 syntax on
+
 set background=dark
 set nu
 set syntax=on
@@ -53,9 +65,9 @@ set laststatus=2
 " Fix <Enter> for comment
 set fo+=cr
 
-"
+
 " hotkeys
-"
+
 imap jj <Esc>
 imap kk <Esc> :w<cr>
 imap kj <Esc> :wq<cr>
@@ -100,6 +112,9 @@ nmap <silent> <C-S-Up> <C-W>+<C-W>+
 nmap <silent> <C-S-Left> <C-W>><C-W>>
 nmap <silent> <C-S-Right> <C-W><<C-W><
 
+
+" settings
+
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -131,5 +146,3 @@ set suffixesadd+=.js
 " set path+=~/Projects/name/static/js
 "
 let g:notes_directories = ['~/Dropbox/Shared Notes']
-
-" end
