@@ -6,15 +6,18 @@
 call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'corntrace/bufexplorer'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'elzr/vim-json'
 Plug 'ervandew/supertab'
+Plug 'itchyny/lightline.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdtree'
-Plug 'w0rp/ale'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 Plug 'vim-scripts/ScrollColors'
 Plug 'vim-scripts/vimwiki'
+Plug 'w0rp/ale'
 call plug#end()
 
 
@@ -84,6 +87,8 @@ nmap kd <Esc> :q!<cr>
 
 nmap <C-l> :NERDTreeFind<cr>
 nmap <C-i> :ALEToggle<cr>
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 " nmap <C-i> :SyntasticToggleMode<cr>
 " F3 - File browser
 nmap <F3> :NERDTreeToggle<cr>
