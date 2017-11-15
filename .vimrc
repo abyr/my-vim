@@ -4,6 +4,7 @@
 " plugins
 
 call plug#begin('~/.vim/plugged')
+Plug 'ap/vim-buftabline'
 Plug 'airblade/vim-gitgutter'
 Plug 'corntrace/bufexplorer'
 Plug 'editorconfig/editorconfig-vim'
@@ -11,6 +12,7 @@ Plug 'elzr/vim-json'
 Plug 'ervandew/supertab'
 Plug 'itchyny/lightline.vim'
 Plug 'kien/ctrlp.vim'
+Plug 'marijnh/tern_for_vim'
 Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
@@ -18,10 +20,17 @@ Plug 'tpope/vim-surround'
 Plug 'vim-scripts/ScrollColors'
 Plug 'vim-scripts/vimwiki'
 Plug 'w0rp/ale'
+Plug 'reedes/vim-pencil'
 call plug#end()
 
 
 " settings
+
+set nocompatible
+
+if filereadable(expand("~/.vimrc.before"))
+	source ~/.vimrc.before
+endif
 
 colorscheme slate
 
@@ -29,12 +38,13 @@ filetype off
 filetype plugin indent on
 filetype plugin on
 syntax on
-
-set background=dark
-set nu
-set syntax=on
-set nocompatible
 set ofu=syntaxcomplete#Complete
+
+set noswapfile
+set nobackup
+set nowb
+
+set nu
 set backspace=indent,eol,start
 set shortmess=a
 set softtabstop=2
@@ -56,17 +66,17 @@ set ignorecase
 set lz
 set ffs=unix,dos,mac
 set fencs=utf-8,cp1251,koi8-r,ucs-2,cp866
+set encoding=utf8
 set showcmd
 set mouse=a
 set mousemodel=popup
 set guioptions-=T
 set guioptions-=m
 set novisualbell
-set nobackup
-set noswapfile
+
 " remove unwanted whitespaces
 autocmd BufWritePre * :%s/\s\+$//e
-set encoding=utf8
+
 au BufReadPost *.mustache set syntax=html
 " Fix <Enter> for comment
 set fo+=cr
@@ -77,13 +87,14 @@ set laststatus=2
 set statusline+=%#warningmsg#
 set statusline+=%*
 
-
 " hotkeys
 
 imap jj <Esc>
 imap kk <Esc> :w<cr>
 imap kj <Esc> :wq<cr>
 nmap kd <Esc> :q!<cr>
+
+nmap <C-h> :bnext<CR>
 
 nmap <C-l> :NERDTreeFind<cr>
 nmap <C-i> :ALEToggle<cr>
