@@ -15,6 +15,8 @@ Hotkeys
 
 <kbd>F7</kbd> - show next buffer
 
+<kbd>F8</kbd> - prose mode
+
 <kbd>F9</kbd> - show exit options
 
 <kbd>\\</kbd> <kbd>w</kbd> <kbd>w</kbd> - vimwiki
