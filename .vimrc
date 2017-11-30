@@ -21,6 +21,8 @@ Plug 'vim-scripts/ScrollColors'
 Plug 'vim-scripts/vimwiki'
 Plug 'w0rp/ale'
 Plug 'reedes/vim-pencil'
+Plug 'junegunn/limelight.vim'
+Plug 'junegunn/goyo.vim'
 call plug#end()
 
 
@@ -117,6 +119,9 @@ imap <F6> <esc>:bp<cr>i
 map <F7> :bn<cr>
 vmap <F7> <esc>:bn<cr>i
 imap <F7> <esc>:bn<cr>i
+" writing prose
+map <F8> :Goyo <bar> :Limelight!! <bar> :TogglePencil <CR>
+nmap <C-\> :setlocal spell! <cr>
 " F9 - exit
 set wildmenu
 set wcm=<Tab>
@@ -131,7 +136,7 @@ nmap <silent> <C-Up> :wincmd k<CR>
 nmap <silent> <C-Down> :wincmd j<CR>
 nmap <silent> <C-Left> :wincmd h<CR>
 nmap <silent> <C-Right> :wincmd l<CR>
-" resize horzontal split window
+" resize horizontal split window
 nmap <silent> <C-S-Down> <C-W>-<C-W>-
 nmap <silent> <C-S-Up> <C-W>+<C-W>+
 " resize vertical split window
@@ -140,6 +145,8 @@ nmap <silent> <C-S-Right> <C-W><<C-W><
 
 
 " plugins settings
+
+let g:limelight_conceal_ctermfg = 241
 
 let g:ale_linters = {'javascript': ['eslint']}
 
