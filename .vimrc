@@ -95,6 +95,7 @@ imap jj <Esc>
 imap kk <Esc> :w<cr>
 imap kj <Esc> :wq<cr>
 nmap kd <Esc> :q!<cr>
+nmap \ff <Esc> :ALEFix<cr>
 
 nmap <C-h> :bnext<CR>
 
@@ -149,6 +150,9 @@ nmap <silent> <C-S-Right> <C-W><<C-W><
 let g:limelight_conceal_ctermfg = 241
 
 let g:ale_linters = {'javascript': ['eslint']}
+let g:ale_fixers = {}
+let g:ale_fixers.javascript = ['eslint']
+" let g:ale_fix_on_save
 
 if exists("g:ctrl_user_command")
 	unlet g:ctrlp_user_command
