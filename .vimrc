@@ -23,6 +23,7 @@ Plug 'w0rp/ale'
 Plug 'reedes/vim-pencil'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
+Plug 'farseer90718/vim-taskwarrior'
 call plug#end()
 
 
@@ -94,10 +95,10 @@ set statusline+=%*
 imap jj <Esc>
 imap kk <Esc> :w<cr>
 imap kj <Esc> :wq<cr>
-nmap kd <Esc> :q!<cr>
 nmap \ff <Esc> :ALEFix<cr>
 
 nmap <C-h> :bnext<CR>
+nmap <S-h> :bprevious<CR>
 
 nmap <C-l> :NERDTreeFind<cr>
 nmap <C-i> :ALEToggle<cr>
