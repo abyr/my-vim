@@ -1,5 +1,7 @@
 " .vimrc
 
+colorscheme monokai
+set background=dark
 
 " plugins
 
@@ -12,7 +14,7 @@ Plug 'elzr/vim-json'
 Plug 'ervandew/supertab'
 Plug 'itchyny/lightline.vim'
 Plug 'kien/ctrlp.vim'
-Plug 'marijnh/tern_for_vim'
+" Plug 'marijnh/tern_for_vim'
 Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
@@ -24,8 +26,8 @@ Plug 'reedes/vim-pencil'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'farseer90718/vim-taskwarrior'
+Plug 'itchyny/calendar.vim'
 call plug#end()
-
 
 " settings
 
@@ -35,7 +37,6 @@ if filereadable(expand("~/.vimrc.before"))
 	source ~/.vimrc.before
 endif
 
-colorscheme slate
 
 filetype off
 filetype plugin indent on
@@ -161,7 +162,6 @@ endif
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/\.git/*
 set wildignore+=*.pyc*,*.sql*
 set wildignore+=*/node_modules/*
-set wildignore+=*js-build/*
 set wildignore+=*log*,*.sh*
 set wildignore+=*.py*
 set wildignore+=*.css*
@@ -174,4 +174,9 @@ set completeopt-=preview
 set completeopt+=longest
 set suffixesadd+=.js
 
-let g:notes_directories = ['~/Dropbox/Shared Notes']
+let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki', 'ext': '.wiki'}]
+
+let g:calendar_google_calendar = 1
+let g:calendar_google_task = 1
+
+"
