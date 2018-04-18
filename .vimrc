@@ -14,7 +14,7 @@ Plug 'elzr/vim-json'
 Plug 'ervandew/supertab'
 Plug 'itchyny/lightline.vim'
 Plug 'kien/ctrlp.vim'
-" Plug 'marijnh/tern_for_vim'
+Plug 'marijnh/tern_for_vim'
 Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
@@ -27,6 +27,7 @@ Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'farseer90718/vim-taskwarrior'
 Plug 'itchyny/calendar.vim'
+Plug 'vim-scripts/taglist.vim'
 call plug#end()
 
 " settings
@@ -93,6 +94,9 @@ set statusline+=%*
 
 " hotkeys
 
+" rus
+nmap <C-ш> i
+
 imap jj <Esc>
 imap kk <Esc> :w<cr>
 imap kj <Esc> :wq<cr>
@@ -100,15 +104,19 @@ nmap \ff <Esc> :ALEFix<cr>
 
 nmap <C-h> :bnext<CR>
 nmap <S-h> :bprevious<CR>
-
 nmap <C-l> :NERDTreeFind<cr>
 nmap <C-i> :ALEToggle<cr>
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
-" nmap <C-i> :SyntasticToggleMode<cr>
+
 " F3 - File browser
 nmap <F3> :NERDTreeToggle<cr>
 imap <F3> <esc>:NERDTreeToggle<cr>
+
+
+" tags
+nnoremap <silent> <F4> :TlistToggle<CR>
+
 " buffers
 " F5 - show buffers
 nmap <F5> <Esc>:BufExplorer<cr>
@@ -149,12 +157,11 @@ nmap <silent> <C-S-Right> <C-W><<C-W><
 
 " plugins settings
 
-let g:limelight_conceal_ctermfg = 241
+let Tlist_Use_Right_Window = 1
 
 let g:ale_linters = {'javascript': ['eslint']}
 let g:ale_fixers = {}
 let g:ale_fixers.javascript = ['eslint']
-" let g:ale_fix_on_save
 
 if exists("g:ctrl_user_command")
 	unlet g:ctrlp_user_command
@@ -174,9 +181,11 @@ set completeopt-=preview
 set completeopt+=longest
 set suffixesadd+=.js
 
-let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki', 'ext': '.wiki'}]
+let g:limelight_conceal_ctermfg = 241
 
 let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
+
+let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki'}]
 
 "

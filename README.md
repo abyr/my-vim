@@ -35,5 +35,5 @@ Edit mode
 
 <kbd>k</kbd> <kbd>j</kbd> - exit save and close
 
-<kbd>k</kbd> <kbd>d</kbd> - close without changes
+
 
