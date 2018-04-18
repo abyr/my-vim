@@ -158,6 +158,8 @@ nmap <silent> <C-S-Right> <C-W><<C-W><
 " plugins settings
 
 let Tlist_Use_Right_Window = 1
+let Tlist_Sort_Type = "name"
+let Tlist_WinWidth = 40
 
 let g:ale_linters = {'javascript': ['eslint']}
 let g:ale_fixers = {}
