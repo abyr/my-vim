@@ -28,6 +28,8 @@ Plug 'junegunn/goyo.vim'
 Plug 'farseer90718/vim-taskwarrior'
 Plug 'itchyny/calendar.vim'
 Plug 'vim-scripts/taglist.vim'
+Plug 'stanangeloff/php.vim'
+Plug 'evidens/vim-twig'
 call plug#end()
 
 " settings
@@ -83,6 +85,8 @@ set novisualbell
 autocmd BufWritePre * :%s/\s\+$//e
 
 au BufReadPost *.mustache set syntax=html
+au BufNewFile,BufRead *.html.twig set syntax=html
+
 " Fix <Enter> for comment
 set fo+=cr
 
@@ -161,20 +165,23 @@ let Tlist_Use_Right_Window = 1
 let Tlist_Sort_Type = "name"
 let Tlist_WinWidth = 40
 
-let g:ale_linters = {'javascript': ['eslint']}
+let g:ale_linters = {'javascript': ['eslint'], 'php': ['php']}
 let g:ale_fixers = {}
 let g:ale_fixers.javascript = ['eslint']
 
 if exists("g:ctrl_user_command")
 	unlet g:ctrlp_user_command
 endif
+
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/\.git/*
 set wildignore+=*.pyc*,*.sql*
 set wildignore+=*/node_modules/*
 set wildignore+=*log*,*.sh*
 set wildignore+=*.py*
 set wildignore+=*.css*
+
 let g:ctrlp_clear_cache_on_exit=0
+
 set complete=""
 set complete+=.
 set complete+=k
