@@ -1,35 +1,47 @@
 " .vimrc
 
-colorscheme monokai
 set background=dark
+colorscheme hybrid
 
 " plugins
 
 call plug#begin('~/.vim/plugged')
-Plug 'ap/vim-buftabline'
-Plug 'airblade/vim-gitgutter'
+" colors
+Plug 'vim-scripts/ScrollColors'
+Plug 'w0ng/vim-hybrid'
+" browser
+Plug 'scrooloose/nerdtree'
 Plug 'corntrace/bufexplorer'
+Plug 'ap/vim-buftabline'
+Plug 'itchyny/lightline.vim'
+Plug 'ervandew/supertab'
+" git
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
+" ide
+Plug 'kien/ctrlp.vim'
+Plug 'vim-scripts/taglist.vim'
+Plug 'marijnh/tern_for_vim'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'tpope/vim-surround'
+Plug 'mattn/emmet-vim'
+Plug 'tpope/vim-commentary'
+" linter
+Plug 'w0rp/ale'
+" langs
 Plug 'editorconfig/editorconfig-vim'
 Plug 'elzr/vim-json'
-Plug 'ervandew/supertab'
-Plug 'itchyny/lightline.vim'
-Plug 'kien/ctrlp.vim'
-Plug 'marijnh/tern_for_vim'
-Plug 'mattn/emmet-vim'
-Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-Plug 'vim-scripts/ScrollColors'
-Plug 'vim-scripts/vimwiki'
-Plug 'w0rp/ale'
-Plug 'reedes/vim-pencil'
-Plug 'junegunn/limelight.vim'
-Plug 'junegunn/goyo.vim'
-Plug 'farseer90718/vim-taskwarrior'
-Plug 'itchyny/calendar.vim'
-Plug 'vim-scripts/taglist.vim'
 Plug 'stanangeloff/php.vim'
 Plug 'evidens/vim-twig'
+" writing
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'reedes/vim-pencil'
+" organiser
+Plug 'vim-scripts/vimwiki'
+Plug 'farseer90718/vim-taskwarrior'
+Plug 'itchyny/calendar.vim'
 call plug#end()
 
 " settings
@@ -189,6 +201,11 @@ set complete+=b
 set completeopt-=preview
 set completeopt+=longest
 set suffixesadd+=.js
+
+let g:gutentags_cache_dir = '~/.vim/gutentags'
+let g:gutentags_ctags_exclude = ['*.css', '*.html', '*.js', '*.json', '*.xml', '*.phar', '*.ini', '*.rst', '*.md',
+                            \ '*vendor/*/test*', '*vendor/*/Test*', '*vendor/*/fixture*', '*vendor/*/Fixture*',
+                            \ '*var/cache*', '*var/log*', '*app/cache', '*app/logs']
 
 let g:limelight_conceal_ctermfg = 241
 
