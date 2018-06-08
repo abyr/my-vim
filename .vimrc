@@ -39,7 +39,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'reedes/vim-pencil'
 " organiser
-Plug 'vim-scripts/vimwiki'
+Plug 'vimwiki/vimwiki'
 Plug 'farseer90718/vim-taskwarrior'
 Plug 'itchyny/calendar.vim'
 call plug#end()
@@ -212,6 +212,6 @@ let g:limelight_conceal_ctermfg = 241
 let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
 
-let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki'}]
+let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/personal'}, {'path': '~/Dropbox/vimwiki/work'}]
 
 "
