@@ -27,6 +27,7 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'tpope/vim-surround'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-commentary'
+Plug 'majutsushi/tagbar'
 " linter
 Plug 'w0rp/ale'
 " langs
@@ -134,6 +135,7 @@ imap <F3> <esc>:NERDTreeToggle<cr>
 
 " tags
 nnoremap <silent> <F4> :TlistToggle<CR>
+" nmap <F8> :TagbarToggle<CR>
 
 " buffers
 " F5 - show buffers
