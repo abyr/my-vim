@@ -23,8 +23,6 @@ Hotkeys
 
 <kbd>\\</kbd> <kbd>w</kbd> <kbd>w</kbd> - vimwiki
 
-<kbd>\\</kbd> <kbd>f</kbd> + <kbd>f</kbd> - ALE Auto fix
-
 
 Edit mode
 ---------
