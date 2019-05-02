@@ -1,7 +1,9 @@
 " .vimrc
 
-set background=dark
-colorscheme hybrid
+"set background=dark
+"colorscheme hybrid
+set background=light
+colorscheme PaperColor
 
 " plugins
 
@@ -9,11 +11,11 @@ call plug#begin('~/.vim/plugged')
 " colors
 Plug 'vim-scripts/ScrollColors'
 Plug 'w0ng/vim-hybrid'
+Plug 'nlknguyen/papercolor-theme'
 " browser
 Plug 'scrooloose/nerdtree'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'ap/vim-buftabline'
-Plug 'itchyny/lightline.vim'
 Plug 'ervandew/supertab'
 " git
 Plug 'airblade/vim-gitgutter'
@@ -22,38 +24,27 @@ Plug 'junegunn/gv.vim'
 " ide
 Plug 'kien/ctrlp.vim'
 Plug 'vim-scripts/taglist.vim'
-Plug 'marijnh/tern_for_vim'
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'tpope/vim-surround'
-Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-commentary'
-Plug 'majutsushi/tagbar'
-" linter
-Plug 'w0rp/ale'
 " langs
 Plug 'editorconfig/editorconfig-vim'
-Plug 'elzr/vim-json'
-Plug 'stanangeloff/php.vim'
-Plug 'evidens/vim-twig'
 " writing
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'reedes/vim-pencil'
 " organiser
-" Plug 'mhinz/vim-startify'
 Plug 'vimwiki/vimwiki'
-Plug 'farseer90718/vim-taskwarrior'
-Plug 'itchyny/calendar.vim'
 call plug#end()
 
 " settings
 
+let use_ale = 0
+let use_syntastic = 0
+
 set nocompatible
 
 if filereadable(expand("~/.vimrc.before"))
-	source ~/.vimrc.before
+    source ~/.vimrc.before
 endif
-
 
 filetype off
 filetype plugin indent on
@@ -106,15 +97,67 @@ au BufNewFile,BufRead *.html.twig set syntax=html
 set fo+=cr
 
 " status line format
-set statusline=%<%f%h%m%r\ %b\ %{&encoding}\ 0x\ \ %l,%c%V\ %P
+" http://tdaly.co.uk/projects/vim-statusline-generator/
 set laststatus=2
-set statusline+=%#warningmsg#
+
+set statusline=                          " left align
+set statusline+=%2*\                     " blank char
+set statusline+=%2*\%{StatuslineMode()}
+set statusline+=%2*\                     " blank char
+set statusline+=%1*\ <<
+set statusline+=%1*\ %f                  " short filename
+set statusline+=%1*\ >>
+
+set statusline+=%1#warningmsg#
+set statusline+=%1*
+
+set statusline+=%=                       " right align
 set statusline+=%*
+set statusline+=%3*\%h%m%r               " file flags (help, read-only, modified)
+set statusline+=%4*\%{b:gitbranch}       " include git branch
+set statusline+=%3*\%.25F                " long filename (trimmed to 25 chars)
+set statusline+=%3*\::
+set statusline+=%3*\%l/%L\\|             " line count
+set statusline+=%3*\%y                   " file type
+set statusline+=%333*\                     " blank char
+set statusline+=%P                       " percent of file
+
+hi User1 ctermbg=black ctermfg=grey guibg=black guifg=grey
+hi User2 ctermbg=green ctermfg=black guibg=green guifg=black
+hi User3 ctermbg=black ctermfg=lightgreen guibg=black guifg=lightgreen
+
+function! StatuslineMode()
+  let l:mode=mode()
+  if l:mode==#"n"
+    return "NORMAL"
+  elseif l:mode==?"v"
+    return "VISUAL"
+  elseif l:mode==#"i"
+    return "INSERT"
+  elseif l:mode==#"R"
+    return "REPLACE"
+  endif
+endfunction
+
+function! StatuslineGitBranch()
+  let b:gitbranch=""
+  if &modifiable
+    lcd %:p:h
+    let l:gitrevparse=system("git rev-parse --abbrev-ref HEAD")
+    lcd -
+    if l:gitrevparse!~"fatal: not a git repository"
+      let b:gitbranch="(".substitute(l:gitrevparse, '\n', '', 'g').") "
+    endif
+  endif
+endfunction
+
+augroup GetGitBranch
+  autocmd!
+  autocmd VimEnter,WinEnter,BufEnter * call StatuslineGitBranch()
+augroup END
+
 
 " hotkeys
-
-" rus
-nmap <C-ш> i
 
 imap jj <Esc>
 imap kk <Esc> :w<cr>
@@ -124,9 +167,6 @@ nmap \ff <Esc> :ALEFix<cr>
 nmap <C-h> :bnext<CR>
 nmap <S-h> :bprevious<CR>
 nmap <C-l> :NERDTreeFind<cr>
-nmap <C-i> :ALEToggle<cr>
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " F3 - File browser
 nmap <F3> :NERDTreeToggle<cr>
@@ -181,14 +221,6 @@ let Tlist_Use_Right_Window = 1
 let Tlist_Sort_Type = "name"
 let Tlist_WinWidth = 40
 
-let g:ale_linters = {'javascript': ['jshint'], 'php': ['php'], 'python': ['flake8']}
-let g:ale_fixers = {'python': ['autopep8']}
-let g:ale_fixers.javascript = ['eslint']
-
-if exists("g:ctrl_user_command")
-	unlet g:ctrlp_user_command
-endif
-
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/\.git/*
 set wildignore+=*.pyc*,*.sql*
 set wildignore+=*/node_modules/*
@@ -206,18 +238,14 @@ set completeopt-=preview
 set completeopt+=longest
 set suffixesadd+=.js
 
-let g:gutentags_cache_dir = '~/.vim/gutentags'
-let g:gutentags_ctags_exclude = ['*.css', '*.html', '*.js', '*.json', '*.xml', '*.phar', '*.ini', '*.rst', '*.md',
-                            \ '*vendor/*/test*', '*vendor/*/Test*', '*vendor/*/fixture*', '*vendor/*/Fixture*',
-                            \ '*var/cache*', '*var/log*', '*app/cache', '*app/logs']
-
 let g:limelight_conceal_ctermfg = 241
 
-let g:calendar_google_calendar = 1
-let g:calendar_google_task = 1
-
 let g:vimwiki_list = [
-  \ {'path': '~/Dropbox/vimwiki/personal', 'ext': '.md'},
-  \ {'path': '~/Dropbox/vimwiki/work', 'ext': '.md'}]
+	\ {'path': '~/vimwiki/default', 'syntax': 'markdown', 'ext': '.md'},
+  \ {'path': '~/vimwiki/ofsc', 'syntax': 'markdown', 'ext': '.md'},
+  \ {'path': '~/vimwiki/business', 'syntax': 'markdown', 'ext': '.md'},
+  \ {'path': '~/vimwiki/prose', 'syntax': 'markdown', 'ext': '.md'}]
+
+" let g:vimwiki_folding=""
 
 "
