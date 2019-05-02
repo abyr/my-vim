@@ -3,11 +3,13 @@ Hotkeys
 
 <kbd>Ctrl</kbd> + <kbd>l</kbd> - NerdTree
 
-<kbd>Ctrl</kbd> + <kbd>i</kbd> - toggle A.L.E
+<kbd>Ctrl</kbd> + <kbd>i</kbd> - toggle syntax check
 
 <kbd>Ctrl</kbd> + <kbd>p</kbd> - CtrlP dialog
 
 <kbd>F3</kbd> - toggle files tree browser (nerd tree)
+
+<kbd>F4</kbd> - toggle structure (tag list)
 
 <kbd>F5</kbd> - show buffers list
 
@@ -15,7 +17,7 @@ Hotkeys
 
 <kbd>F7</kbd> - show next buffer
 
-<kbd>F8</kbd> - prose mode
+<kbd>F8</kbd> - writing mode
 
 <kbd>F9</kbd> - show exit options
 
@@ -31,9 +33,6 @@ Edit mode
 
 <kbd>j</kbd> <kbd>j</kbd> - exit edit mode
 
-<kbd>k</kbd> <kbd>k</kbd> - exit and save
+<kbd>k</kbd> <kbd>k</kbd> - save & exit
 
-<kbd>k</kbd> <kbd>j</kbd> - exit save and close
-
-
-
+<kbd>k</kbd> <kbd>j</kbd> - save & exit & close
